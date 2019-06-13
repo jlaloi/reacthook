@@ -1,0 +1,47 @@
+body {
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+button {
+  background-color: cornflowerblue;
+  color: white;
+  font-size: 1em;
+  padding: 0.2em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 3px;
+  border: 0;
+}
+
+button:hover {
+  background-color: plum;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+}
+
+@keyframes entering {
+  from {
+    transform: translateX(-2em);
+  }
+}
+
+@keyframes leaving {
+  to {
+    transform: translateX(-14em);
+  }
+}
+
+.todo {
+  animation: entering 0.5s;
+  a {
+    color: crimson;
+  }
+}
+
+.leave {
+  animation: leaving 0.5s;
+}
