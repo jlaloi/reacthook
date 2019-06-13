@@ -2,13 +2,10 @@ import React, {useState} from 'react';
 
 export const TodoItems = props => {
   const [className, setClassName] = useState('todo');
-  const leave = () => {
-    setClassName('todo leave');
-    setTimeout(() => props.click(props.name), 300);
-  };
+  const remove = () => setClassName('todo leave');
   return (
-    <li className={className}>
-      {props.name} (<a onClick={leave}>X</a>)
+    <li className={className} onAnimationEnd={() => className.includes('leave') && props.click(props.name)}>
+      {props.name} (<a onClick={remove}>X</a>)
     </li>
   );
 };

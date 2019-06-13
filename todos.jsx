@@ -7,7 +7,7 @@ import {mapStateToProps, mapDispatchToProps} from './store';
 export const TodoList = ({todos, add, remove}) => {
   useEffect(() => {
     document.title = `${todos.length} todo(s)`;
-  });
+  }, [todos.length]);
   return (
     <>
       <button onClick={() => add(new Date().getTime())}>Add Todo</button>
@@ -24,7 +24,7 @@ export const TodoListHooked = () => {
   const [todos, setTodos] = useState([]);
   const remove = item => setTodos(todos.filter(todo => todo !== item));
   const add = todo => setTodos([...todos, todo]);
-  return TodoList({todos, add, remove});
+  return <TodoList todos={todos} add={add} remove={remove} />;
 };
 
 export const TodoListStored = connect(

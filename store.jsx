@@ -12,7 +12,7 @@ export const removeTodo = todo => {
 
 export const todos = (state = [], action) => {
   if (action.type === ADD_TODO) return [...state, action.todo];
-  else if (action.type === REMOVE_TODO) return state.filter(todo => todo !== action.todo);
+  if (action.type === REMOVE_TODO) return state.filter(todo => todo !== action.todo);
   return state;
 };
 export const store = createStore(todos);
